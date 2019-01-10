@@ -1,0 +1,42 @@
+instance: 
+  app: nestdynamic
+  hostName: 'localhost'
+  ipAddr: '127.0.0.1'
+  port: 
+    $: 3002 # "new"
+    "@enabled": true
+  # securePort:
+  #   $: 3003 # "new"
+  #   "@enabled": false
+  vipAddress: nestdynamic
+  secureVipAddress: nestdynamic
+  dataCenterInfo: 
+    "@class": "com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo" # new
+    name: "MyOwn"
+  metadata:
+    #
+    apiml.apiInfo.0.apiId: "orq.zowe.hwnest"
+    apiml.apiInfo.0.gatewayUrl: "api/v1"
+    apiml.apiInfo.0.swaggerUrl: "http://localhost:3002/swagger"
+    #
+    # Tile and info inside of tile
+    #
+    mfaas.discovery.catalogUiTile.description: Application which demonstrate how to make a Nest service discoverable in the API Mediation Layer ecosystem
+    mfaas.discovery.catalogUiTile.id: NestJsNodeJs
+    mfaas.discovery.catalogUiTile.title:  Sample API ML app
+    mfaas.discovery.catalogUiTile.version: 1.0.1
+    #
+    # After clicking title, this is the title info
+    #
+    mfaas.service.description: "Sample service showing how to enable a Node.js application"
+    mfaas.service.title: "Hellworld in Node.js"
+    #
+    # Gateway to service mappings
+    #
+    routed-services.0.gateway-url: api/v1
+    routed-services.0.service-url: /
+eureka:
+  ssl: true # https, false for http
+  servicePath: '/eureka/apps' # custom path (not /eureka/v2/apps which is default)
+  host: 'eureka:password@localhost'
+  port: 10011

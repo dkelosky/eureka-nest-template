@@ -1,0 +1,44 @@
+instance: 
+  app: nestdyanmic
+  hostName: 'localhost'
+  ipAddr: '127.0.0.1'
+  # hello world python 1
+  instanceId: "hwnest1"
+  port: 
+    $: 3002 # "new"
+    "@enabled": true
+  vipAddress: nestdyanmic
+  dataCenterInfo: 
+    "@class": "com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo" # new
+    name: "MyOwn"
+  metadata:
+    mfaas:
+      api-info:
+        apiVersionProperties:
+          v1:
+            description: "Sample API showing how to use a Node.js application in the API Mediation Layer ecosystem"
+            title: "Hellworld in Nest.js"
+            version: "1.0.0"
+      discovery:
+        catalogUiTile:
+          description: "Applications which demonstrate how to make a Node.js service discoverable in the API Mediation Layer ecosystem"
+          id: "NestJsNodeJs"
+          title: "Sample API Mediation Layer applications"
+          version: "1.0.1"
+        enableApiDoc: "true"
+        service:
+          hostname: "localhost"
+          ipAddress: "127.0.0.1"
+          description: "Sample service showing how to enable a Node.js application"
+          title: "Hellworld in Node.js"
+    routed-services:
+      apiDoc:
+        gateway-url: "api/v1/api-doc"
+        service-url: "/swagger"
+      apiV1:
+        gateway-url: "api/v1"
+        service-url: ""
+eureka: 
+  servicePath: '/eureka/apps' # customer path (not /eureka/v2/apps which is default)
+  host: 'eureka:password@localhost'
+  port: 10011
