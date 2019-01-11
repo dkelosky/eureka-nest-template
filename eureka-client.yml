@@ -15,9 +15,9 @@ instance:
     name: "MyOwn"
   metadata:
     #
-    apiml.apiInfo.0.apiId: "orq.zowe.hwnest"
-    apiml.apiInfo.0.gatewayUrl: "api/v1"
-    apiml.apiInfo.0.swaggerUrl: "http://localhost:3002/swagger"
+    # apiml.apiInfo.0.apiId: "orq.zowe.hwnest"
+    # apiml.apiInfo.0.gatewayUrl: "api/v1"
+    # apiml.apiInfo.0.swaggerUrl: "http://localhost:3002/swagger"
     #
     # Tile and info inside of tile
     #
@@ -35,6 +35,8 @@ instance:
     #
     routed-services.0.gateway-url: api/v1
     routed-services.0.service-url: /
+    routed-services.1.gateway-url: api/v1/api-doc
+    routed-services.1.service-url: /swagger
 eureka:
   ssl: true # https, false for http
   servicePath: '/eureka/apps' # custom path (not /eureka/v2/apps which is default)
